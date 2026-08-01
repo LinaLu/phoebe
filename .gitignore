@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.bun/
+
+# Build & Output
+dist/
+build/
+out/
+.vite/
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# Cache & Temporary
+.cache/
+.turbo/
+tmp/
+temp/
+
+# OS & Editor files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/

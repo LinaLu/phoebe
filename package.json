@@ -1,0 +1,22 @@
+{
+  "name": "phoebe",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "bun run --parallel dev:client dev:server",
+    "dev:client": "cd client && bun run dev",
+    "dev:server": "cd server && bun run dev",
+    "build": "bun run build:client && bun run build:server",
+    "build:client": "cd client && bun run build",
+    "build:server": "cd server && bun run build",
+    "lint": "bun run lint:client && bun run lint:server",
+    "lint:client": "cd client && bun run lint",
+    "lint:server": "cd server && bun run lint",
+    "test": "bun test"
+  }
+}
