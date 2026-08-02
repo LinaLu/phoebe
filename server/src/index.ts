@@ -1,6 +1,8 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
+declare const process: { env: Record<string, string | undefined> };
+
 const app = new Hono()
   .use("*", cors())
   .get("/health", (c) => c.json({ status: "ok", timestamp: new Date().toISOString() }))

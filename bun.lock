@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "phoebe",
+      "devDependencies": {
+        "typescript": "catalog:",
+      },
     },
     "client": {
       "name": "@phoebe/client",
@@ -22,7 +25,7 @@
         "autoprefixer": "^10.4.17",
         "postcss": "^8.4.35",
         "tailwindcss": "^3.4.1",
-        "typescript": "^5.0.0",
+        "typescript": "catalog:",
         "vite": "^5.1.0",
       },
     },
@@ -42,9 +45,12 @@
       "devDependencies": {
         "@types/bun": "latest",
         "drizzle-kit": "^0.20.0",
-        "typescript": "^5.0.0",
+        "typescript": "catalog:",
       },
     },
+  },
+  "catalog": {
+    "typescript": "^5.0.0",
   },
   "packages": {
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],

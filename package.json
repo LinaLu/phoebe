@@ -7,6 +7,12 @@
     "server",
     "packages/*"
   ],
+  "catalog": {
+      "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
+  },
   "scripts": {
     "dev": "bun run --parallel dev:client dev:server",
     "dev:client": "cd client && bun run dev",

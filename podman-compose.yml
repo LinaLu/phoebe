@@ -12,6 +12,34 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U phoebe -d phoebe_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Containerfile
+    container_name: phoebe-server
+    environment:
+      PORT: 3000
+      DATABASE_URL: postgres://phoebe:phoebe_password@postgres:5432/phoebe_db
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Containerfile
+    container_name: phoebe-client
+    ports:
+      - "5173:80"
+    depends_on:
+      - server
 
 volumes:
   pgdata:
