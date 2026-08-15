@@ -42,3 +42,10 @@ Thumbs.db
 *.swo
 .vscode/
 .idea/
+
+# Infra / Pulumi
+infra/node_modules/
+infra/bin/
+infra/.pulumi/
+infra/Pulumi.*.yaml
+!infra/Pulumi.yaml

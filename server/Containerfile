@@ -17,4 +17,5 @@ WORKDIR /app/server
 RUN bun run build
 
 EXPOSE 3000
+# Default: run API. Migration job overrides command to `bun run db:migrate`.
 CMD ["bun", "run", "start"]

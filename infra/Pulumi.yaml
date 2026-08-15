@@ -1,0 +1,14 @@
+name: phoebe
+description: Production deployment for Phoebe on Google Cloud Run + Neon
+runtime:
+  name: nodejs
+  options:
+    packagemanager: bun
+    typescript: true
+main: index.ts
+packages:
+  neon:
+    source: pulumi/pulumi/terraform-provider
+    version: 1.3.0
+    parameters:
+      - kislerdm/neon

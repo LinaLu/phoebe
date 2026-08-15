@@ -1,0 +1,33 @@
+server {
+    listen 80;
+    server_name localhost;
+
+    auth_basic "Restricted";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+        # With NGINX_ENVSUBST_FILTER=SERVER_URL only ${SERVER_URL} is substituted,
+        # so nginx variables must stay as single-dollar forms.
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api/ {
+        proxy_pass ${SERVER_URL}/api/;
+        proxy_http_version 1.1;
+        proxy_ssl_server_name on;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $proxy_host;
+        proxy_set_header X-Internal-API-Key "${INTERNAL_API_KEY}";
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /health {
+        proxy_pass ${SERVER_URL}/health;
+        proxy_http_version 1.1;
+        proxy_ssl_server_name on;
+        proxy_set_header Host $proxy_host;
+    }
+}

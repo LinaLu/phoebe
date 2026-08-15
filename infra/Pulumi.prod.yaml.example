@@ -1,0 +1,10 @@
+config:
+  gcp:project: your-gcp-project-id
+  gcp:region: your-gcp-region
+  phoebe:basicAuthUsername: your-username
+  phoebe:neonRegion: your-neon-region
+  # phoebe:neonOrgId: your-neon-org-id
+  # Optional overrides (default to v<version> from package.json):
+  # phoebe:serverImageTag: v1.0.0
+  # phoebe:clientImageTag: v1.0.0
+  # Set with: pulumi config set --secret basicAuthPassword '...'
