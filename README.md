@@ -8,6 +8,9 @@
 
 The backend API and database only store ciphertext payloads and necessary metadata—encryption keys are generated and held exclusively on client devices, ensuring that neither the server, database, nor cloud providers can access or decrypt sensitive family medical history.
 
+<img width="2138" height="1092" alt="Screenshot 2026-08-17 at 21 33 02" src="https://github.com/user-attachments/assets/f93173bb-4916-4bf5-b54f-09dc3f087081" />
+
+
 ---
 
 ## Architecture
